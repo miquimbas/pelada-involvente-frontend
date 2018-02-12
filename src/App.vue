@@ -1,17 +1,48 @@
 <template>
   <div>
-    <h1>Pelada</h1>
-    <h3>{{ game.day }}</h3>
+    <section class="hero is-primary">
+      <div class="hero-body">
+          <div class="container">
+            <p class="title is-1">Pelada</p>
+            <p class="subtitle is-3">{{ game.day }}</p>
+          </div>
+        </div>
+      </section>
 
-    <h4>Lista de Confirmados</h4>
-    <ul>
-      <li v-for="player of game.players">{{ player.nickName }}</li>
-    </ul>
+      <div class="demo">
+        <table class="table is-bordered">
+            <thead>
+              <tr>
+                  <th>Lista de Confirmados</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="player of game.players"> 
+                <td>{{ player.nickName }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-    <h4>Lista de Espera</h4>
-    <ul>
-      <li v-for="player of game.waitingList">{{ player.nickName }}</li>
-    </ul>
+        <div class="demo">
+          <table class="table is-bordered is-responsive">
+            <thead>
+              <tr>
+                  <th>Lista de Espera</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="player of game.waitingList"> 
+                <td>{{ player.nickName }}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+
+      
+
+      
+
   </div>
 </template>
 
