@@ -18,7 +18,10 @@
             </thead>
             <tbody>
               <tr v-for="player of game.players"> 
-                <td>{{ player.nickName }}</td>
+                <td>
+                    <input v-on:click="edita(player)" class="button is-white" v-model="player.nickName">
+                    <a v-on:click="remove(player)" class="delete"></a>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -46,7 +49,13 @@
 export default {
   data () {
     return{
-      game: {}
+      game: {},
+      edita: function(player) {
+          console.log("edita o " + player.nickName);
+      },
+      remove: function(player) {
+          console.log("remove o " + player.nickName);
+      }
     }
   },
   created () {
